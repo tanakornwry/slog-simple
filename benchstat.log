@@ -1,0 +1,24 @@
+$ benchstat zapbenchmarks/zap.bench slog.bench
+name                              old time/op    new time/op    delta
+Attrs/async_discard/5_args-8         348ns ± 2%      88ns ± 2%   -74.77%  (p=0.008 n=5+5)
+Attrs/async_discard/10_args-8        570ns ± 2%     280ns ± 2%   -50.94%  (p=0.008 n=5+5)
+Attrs/async_discard/40_args-8       1.84µs ± 2%    0.91µs ± 3%   -50.37%  (p=0.008 n=5+5)
+Attrs/fastText_discard/5_args-8      476ns ± 2%     200ns ±45%   -57.92%  (p=0.008 n=5+5)
+Attrs/fastText_discard/10_args-8     822ns ± 7%     524ns ± 2%   -36.27%  (p=0.008 n=5+5)
+Attrs/fastText_discard/40_args-8    2.70µs ± 3%    2.01µs ± 3%   -25.76%  (p=0.008 n=5+5)
+
+name                              old alloc/op   new alloc/op   delta
+Attrs/async_discard/5_args-8          320B ± 0%        0B       -100.00%  (p=0.008 n=5+5)
+Attrs/async_discard/10_args-8         640B ± 0%      208B ± 0%   -67.50%  (p=0.008 n=5+5)
+Attrs/async_discard/40_args-8       2.69kB ± 0%    1.41kB ± 0%   -47.64%  (p=0.008 n=5+5)
+Attrs/fastText_discard/5_args-8       320B ± 0%        0B       -100.00%  (p=0.008 n=5+5)
+Attrs/fastText_discard/10_args-8      641B ± 0%      208B ± 0%   -67.55%  (p=0.008 n=5+5)
+Attrs/fastText_discard/40_args-8    2.70kB ± 0%    1.41kB ± 0%   -47.63%  (p=0.029 n=4+4)
+
+name                              old allocs/op  new allocs/op  delta
+Attrs/async_discard/5_args-8          1.00 ± 0%      0.00       -100.00%  (p=0.008 n=5+5)
+Attrs/async_discard/10_args-8         1.00 ± 0%      1.00 ± 0%      ~     (all equal)
+Attrs/async_discard/40_args-8         1.00 ± 0%      1.00 ± 0%      ~     (all equal)
+Attrs/fastText_discard/5_args-8       1.00 ± 0%      0.00       -100.00%  (p=0.008 n=5+5)
+Attrs/fastText_discard/10_args-8      1.00 ± 0%      1.00 ± 0%      ~     (all equal)
+Attrs/fastText_discard/40_args-8      1.00 ± 0%      1.00 ± 0%      ~     (all equal)
